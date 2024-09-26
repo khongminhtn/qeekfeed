@@ -1,0 +1,136 @@
+<html>
+
+<head>
+  <style>
+    #feedback-widget {
+      cursor: move;
+      user-select: none;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="testing-fbready">
+    Testing
+  </h1>
+</body>
+<script>
+  (function () {
+    // Create widget container
+    var widget = document.createElement('div');
+    widget.id = 'feedback-widget';
+    widget.style.position = 'fixed';
+    widget.style.zIndex = '9999';
+
+    // Create feedback button
+    var button = document.createElement('button');
+    button.textContent = 'Feedback';
+    button.onclick = showFeedbackForm;
+    widget.appendChild(button);
+
+    // Create feedback form (initially hidden)
+    var form = document.createElement('form');
+    form.style.display = 'none';
+    form.innerHTML = `
+        <textarea placeholder="Your feedback"></textarea>
+        <button type="submit">Send</button>
+      `;
+    form.onsubmit = submitFeedback;
+    widget.appendChild(form);
+
+    // Add widget to page
+    document.body.appendChild(widget);
+
+    // Set initial position
+    var x = 20;
+    var y = window.innerHeight - widget.offsetHeight - 20;
+    setWidgetPosition(x, y);
+
+    // Drag functionality
+    var isDragging = false;
+    var startX;
+    var startY;
+
+    widget.addEventListener("mousedown", dragStart);
+    document.addEventListener("mousemove", drag);
+    document.addEventListener("mouseup", dragEnd);
+
+    function dragStart(e) {
+      isDragging = true;
+      startX = e.clientX - widget.offsetLeft;
+      startY = e.clientY - widget.offsetTop;
+    }
+
+    function drag(e) {
+      if (isDragging) {
+        e.preventDefault();
+        var newX = e.clientX - startX;
+        var newY = e.clientY - startY;
+        setWidgetPosition(newX, newY);
+      }
+    }
+
+    function dragEnd(e) {
+      isDragging = false;
+    }
+
+    function setWidgetPosition(x, y) {
+      widget.style.left = x + 'px';
+      widget.style.top = y + 'px';
+    }
+
+    function showFeedbackForm() {
+      button.style.display = 'none';
+      form.style.display = 'block';
+    }
+
+    function submitFeedback(e) {
+      e.preventDefault();
+      var feedback = form.querySelector('textarea').value;
+      // Send feedback to your server
+      fetch('https://your-api.com/feedback', {
+        method: 'POST',
+        body: JSON.stringify({ feedback: feedback }),
+        headers: { 'Content-Type': 'application/json' }
+      }).then(() => {
+        alert('Thank you for your feedback!');
+        form.style.display = 'none';
+        button.style.display = 'block';
+      });
+    }
+
+    // Function to add feedback icons to elements
+    function addFeedbackIcons() {
+      const elements = document.querySelectorAll("*[class$='fbready']");
+
+      elements.forEach(element => {
+        const icon = document.createElement('div');
+        icon.textContent = '!';
+        icon.style.position = 'absolute';
+        icon.style.top = '5px';
+        icon.style.right = '5px';
+        icon.style.cursor = 'pointer';
+        icon.style.fontSize = '12px';
+        icon.style.color = 'red';
+
+        icon.addEventListener('click', () => {
+          showFeedbackForm(); // Show the feedback form
+          // Optionally, you might want to position the widget near the clicked element
+          const elementRect = element.getBoundingClientRect();
+          setWidgetPosition(elementRect.right, elementRect.top);
+        });
+
+        element.appendChild(icon);
+      });
+    }
+
+    // Call the function to add icons when the page loads
+    window.addEventListener('load', addFeedbackIcons);
+  })();
+</script>
+
+</html>
