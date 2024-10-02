@@ -1,5 +1,5 @@
-import { updateBoundaries } from "../boundaries";
-import { setWidgetPosition } from "../positioning";
+import { updateBoundaries } from "../functionalities/boundaries";
+import { setWidgetPosition } from "../functionalities/positioning";
 import { getStates, updateStates } from "../states";
 import { States } from "../states.type";
 

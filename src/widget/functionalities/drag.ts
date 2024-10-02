@@ -1,7 +1,7 @@
 import { updateBoundaries } from "./boundaries";
 import { setWidgetPosition } from "./positioning";
-import { getStates, updateStates } from "./states";
-import { States } from "./states.type";
+import { getStates, updateStates } from "../states";
+import { States } from "../states.type";
 
 export function addDragFunctionality() {
   let states = getStates()

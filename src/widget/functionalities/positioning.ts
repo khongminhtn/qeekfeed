@@ -1,5 +1,5 @@
-import { getStates, updateStates } from "./states";
-import { States } from "./states.type";
+import { getStates, updateStates } from "../states";
+import { States } from "../states.type";
 
 export function setWidgetPosition(x: number, y: number) {
   let states = getStates()

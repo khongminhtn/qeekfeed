@@ -1,5 +1,5 @@
-import { getStates, updateStates as updateStates } from "./states";
-import { States } from "./states.type";
+import { getStates, updateStates as updateStates } from "../states";
+import { States } from "../states.type";
 
 export function updateBoundaries() {
   let states = getStates()

@@ -1,8 +1,8 @@
-import { updateBoundaries } from "./boundaries"
+import { updateBoundaries } from "./functionalities/boundaries"
 import { FeedbackButton } from "./components/Buttons"
 import { Loader } from "./components/Loader"
-import { addDragFunctionality } from "./drag"
-import { setInitialPosition } from "./positioning"
+import { addDragFunctionality } from "./functionalities/drag"
+import { setInitialPosition } from "./functionalities/positioning"
 import { states } from "./states"
 
 function createWidget() {
