@@ -10,14 +10,18 @@ body {
 /* FEEDBACK BUTTON */
 #qeekfeed-feedback-button {
   border-radius: 20px;
-  padding: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
   border: none;
   color: white;
   background-color: rgb(25, 25, 25);
   opacity: 20%;
   cursor: pointer;
+  width: 100px;
+  height: 40px;
+
+  /* positioning */
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 #qeekfeed-feedback-button:hover {
@@ -26,6 +30,20 @@ body {
 
 
 /* FEEDBACK FORM */
+@keyframes qeekfeed-feedback-form-keyframe {
+  from {
+    width: 0px;
+    height: 0px;
+  }
+  50% {
+    width: 250px;
+    height: 60px;
+  }
+  to {
+    height: 160px;
+  }
+}
+
 #qeekfeed-feedback-form {
   border: 2px solid black;
   border-radius: 20px;
@@ -34,6 +52,13 @@ body {
   display: flex;
   justify-content: center;
   padding: 20px;
+  animation: qeekfeed-feedback-form-keyframe 500ms;
+
+  /* positioning */
+  transform-origin: bottom left;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 #qeekfeed-feedback-form textarea {
@@ -53,7 +78,12 @@ body {
   border: 2px solid black;
   background-color: white;
   border-radius: 20px;
-  padding: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
+  width: 100px;
+  height: 40px;
+
+
+  /* positioning */
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }

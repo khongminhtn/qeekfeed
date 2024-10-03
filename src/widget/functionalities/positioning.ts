@@ -13,7 +13,7 @@ export function setWidgetPosition(x: number, y: number) {
 export function setInitialPosition() {
   let states = getStates()
   const x = 20;
-  const y = window.innerHeight - states.widget.offsetHeight - 50;
+  const y = window.innerHeight - states.widget.offsetHeight - 20;
   setWidgetPosition(x, y)
   updateStates(states)
 }
