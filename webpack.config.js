@@ -3,11 +3,11 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    widget: './src/widget/widget.ts'
-  }, // Entry point of your application
+    widget: './src/widget/widget.ts' // entry point for wdiget
+  }, 
   output: {
-    filename: '[name].js', // Output bundle filename   
-    path: path.resolve(__dirname, 'dist'), // Output directory
+    filename: '[name].js', // name the output the same as entry
+    path: path.resolve(__dirname, 'dist/webpack/'), // use dist as output directory
   },
   module: {
     rules: [

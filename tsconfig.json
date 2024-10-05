@@ -1,8 +1,15 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "module": "es2015", // or your preferred module system
-    "strict": true,      // Enable all strict type-checking options
-    "noEmit": false      // Generate JavaScript output files
-  }
+    "module": "NodeNext",
+    "strict": true,
+    "noEmit": false,
+    "moduleResolution": "nodenext",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "outDir": "./dist/src",
+    "rootDir": "./src"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
