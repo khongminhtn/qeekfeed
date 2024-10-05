@@ -17,7 +17,7 @@ export function Form() {
   img.height = 15
   img.onclick = () => {
     Loader(SubmitButton)
-
+    
     // remove widget
     setTimeout(() => {
       let states = getStates()
