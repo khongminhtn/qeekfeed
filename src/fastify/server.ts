@@ -1,11 +1,12 @@
 import fastify, { FastifyInstance, FastifyPluginAsync } from "fastify";
 import { Type, TypeBoxTypeProvider } from "@fastify/type-provider-typebox"
+import feedbackPlugin from "./plugins/widget/form";
 
 // instatiate fastify
 const server = fastify().withTypeProvider<TypeBoxTypeProvider>()
 
 // // register plugin
-// server.register()
+server.register(feedbackPlugin)
 
 
 // start server

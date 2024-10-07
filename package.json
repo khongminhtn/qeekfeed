@@ -1,9 +1,11 @@
 {
   "types": "index.d.ts",
   "scripts": {
-    "build": "tsc -p tsconfig.json -w",
+    "build:watch": "tsc -p tsconfig.json -w",
+    "build": "tsc -p tsconfig.json",
     "build:schemas": "json2ts -i src/fastify/schemas -o src/fastify/types",
-    "dev": "nodemon dist/src/fastify/server.js"
+    "dev": "nodemon dist/src/fastify/server.js",
+    "start": "node dist/src/fastify/server.js"
   },
   "devDependencies": {
     "@types/node": "^22.7.4",
