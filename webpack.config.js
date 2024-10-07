@@ -7,7 +7,7 @@ module.exports = {
   }, 
   output: {
     filename: '[name].js', // name the output the same as entry
-    path: path.resolve(__dirname, 'dist/webpack/'), // use dist as output directory
+    path: path.resolve(__dirname, 'dist/'), // use dist as output directory
   },
   module: {
     rules: [

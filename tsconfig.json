@@ -7,9 +7,9 @@
     "moduleResolution": "nodenext",
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "outDir": "./dist/src",
+    "outDir": "./dist",
     "rootDir": "./src"
   },
-  "include": ["src/**/*"],
+  "include": ["src/fastify/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
