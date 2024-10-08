@@ -1,5 +1,5 @@
 export const assetPaths = {
-  arrowRight: "./assets/arrow-right.png"
+  arrowRight: "../../public/assets/arrow-right.png"
 }
 
 export const api = {
