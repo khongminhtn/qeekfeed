@@ -1,15 +1,17 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "module": "NodeNext",
+    "module": "ESNext",
     "strict": true,
     "noEmit": false,
-    "moduleResolution": "nodenext",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "allowJs": true
   },
-  "include": ["src/fastify/*"],
+  "include": ["src/fastify/*", "types/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

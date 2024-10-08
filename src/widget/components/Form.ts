@@ -3,6 +3,9 @@ import { getStates, updateStates } from "../states"
 import { SubmitButton } from "./Buttons"
 import { Loader } from "./Loader"
 
+// @ts-ignore
+import arrowRight from "../assets/arrow-right.png"
+
 export function Form() {
   // intialize elements
   let form = document.createElement("div")
@@ -12,7 +15,7 @@ export function Form() {
   textarea.placeholder = "How can we make this better for you?"
 
   let img = document.createElement("img")
-  img.src = assetPaths.arrowRight
+  img.src = arrowRight
   img.width = 15
   img.height = 15
   img.onclick = () => {
